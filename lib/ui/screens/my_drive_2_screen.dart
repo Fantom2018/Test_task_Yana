@@ -87,9 +87,7 @@ class _MyDrive2ScreenState extends State<MyDrive2Screen> {
   _appBar (){
     return AppBar(
       actions: [
-        IconButton(onPressed: (){
-          Get.toNamed(Routes.cards2Screen);
-        },
+        IconButton(onPressed: (){ },
             icon: const Icon(CupertinoIcons.minus_circled, size: 24, color: TestColor.greyColor2)),
         const SizedBox(width: 10,)
       ],

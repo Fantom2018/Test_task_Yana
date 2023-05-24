@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-
-
+import 'package:get/get.dart';
 import '../constants/colors_constants.dart';
 import '../constants/text_style_widget.dart';
+import '../routes/app_routes.dart';
 import 'button_point.dart';
 
 class BusCardWidget extends StatelessWidget {
@@ -88,17 +88,25 @@ class BusCardWidget extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Container(
+              SizedBox(
                 child: Row(
                   children: [
+
                     Container(
-                      width: 35,
-                      height: 35,
-                      decoration: const BoxDecoration(
-                        image: DecorationImage(
-                            image: AssetImage(
-                              'assets/images/bus.png'),
-                          fit: BoxFit.fill,
+                      child: GestureDetector(
+                        onDoubleTap: (){
+                          Get.toNamed(Routes.cards2Screen);
+                        },
+                        child: Container(
+                          width: 35,
+                          height: 35,
+                          decoration: const BoxDecoration(
+                            image: DecorationImage(
+                                image: AssetImage(
+                                  'assets/images/bus.png'),
+                              fit: BoxFit.fill,
+                            ),
+                          ),
                         ),
                       ),
                     ),

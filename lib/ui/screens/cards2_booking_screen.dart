@@ -21,7 +21,9 @@ class _Cards2ScreenState extends State<Cards2Screen> {
     return SafeArea(
         child: Scaffold(
           appBar: _appBar(),
-          body: Container(alignment:  Alignment.topCenter,
+          body: Container(
+              alignment:  Alignment.topCenter,
+              color: TestColor.greyColor1,
               padding: const EdgeInsets.only(left: 10.0, right: 10, top: 15.0),
               child: SingleChildScrollView(
                   child: Column(
@@ -29,50 +31,64 @@ class _Cards2ScreenState extends State<Cards2Screen> {
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         Container(
-                          alignment: Alignment.topLeft,
-                          margin: const EdgeInsets.all(24),
-                          child: const Text(
-                              'Маршрут'
-                          ),
-                        ),
-                        Container(
-                          margin: const EdgeInsets.only(bottom: 24, left: 24.0, right: 24),
-                          height: 353,
-                          decoration: const BoxDecoration(
-                            //borderRadius: BorderRadius.circular(6),
+                          margin: const EdgeInsets.only(bottom: 30, left: 24.0, right: 24),
+                          padding: const EdgeInsets.only(left: 21.0, right: 21, top: 8.0, ),
+                          height: 58,
+                          alignment: Alignment.centerLeft,
+
+                          decoration:  BoxDecoration(
+                            borderRadius: BorderRadius.circular(10),
                               color: TestColor.whiteColor,
-                              boxShadow: [
+                              boxShadow: const [
                                 BoxShadow(
-                                    blurStyle: BlurStyle.solid,
+                                    blurStyle: BlurStyle.outer,
                                     color: Color.fromRGBO(26, 42, 97, 0.06),
                                     blurRadius: 45.0,
                                     offset: Offset(0, 4),
                                     spreadRadius: 0.1),
                               ]
                           ),
-                          child: Column(
+                          child: Row(
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              Container(
-                                margin: const EdgeInsets.only(bottom: 24, left: 16.0, right: 16, top: 24),
-                                height: 56,
-                                color: TestColor.greyColor3,
+                              SizedBox(
+                                child: Row(
+                                  children: [
+                                    IconButton(onPressed: (){
+                                      Get.toNamed(Routes.mainScreen);
+                                    }, icon: const Icon(Icons.arrow_back_ios, size: 11, color: TestColor.greenColor,)),
+                                    const SizedBox(width: 20),
+                                    SizedBox(
+                                      // alignment: Alignment.centerLeft,
+                                      child: Column(
+                                        crossAxisAlignment: CrossAxisAlignment.start,
+                                        children:  [
+                                          const Text('Kazan - Nizhnekamsk', style: zTextBlack1StyleConst,),
+                                          const SizedBox(height: 8,),
+                                          Row(
+                                            children: const [
+                                              Text('14th May 2023,', style: zTextBlack2StyleConst,),
+                                              SizedBox(width: 13),
+                                              Text('1 passenger', style: zTextBlack2StyleConst,),
+                                            ],
+                                          ),
 
-                              ),
-                              Container(),
-                              Container(
-                                height: 80,
-                              ),
-                              Container(
-                                height: 70,
+                                        ],
+                                      ),
+                                    ),
+                                  ],
+                                ),
                               ),
                               Container(
-                                margin: const EdgeInsets.only(bottom: 24, left: 16.0, right: 16, top: 24),
-                                height: 45,
-                                color: TestColor.redColor,
-                              ),
+                                width: 24,
+                                height: 24,
+
+                              )
                             ],
                           ),
-                        )
+                        ),
+
                       ]
                   )
               )
